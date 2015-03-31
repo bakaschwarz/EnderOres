@@ -20,7 +20,9 @@ public class OreGenEnderOres implements IWorldGenerator {
                 generateSurface(world, random, chunkX * 16, chunkZ * 16);
             case 1:
                 generateEnd(world, random, chunkX * 16, chunkZ * 16);
-            default: break;
+            default:
+                // Mystcraft?
+                generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
