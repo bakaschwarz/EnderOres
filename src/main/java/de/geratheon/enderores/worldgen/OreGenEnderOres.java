@@ -21,8 +21,8 @@ public class OreGenEnderOres implements IWorldGenerator {
             case 1:
                 generateEnd(world, random, chunkX * 16, chunkZ * 16);
             default:
-                // Mystcraft?
-                generateSurface(world, random, chunkX * 16, chunkZ * 16);
+                // Mystcraft and other dimensions from mods
+                generateDefault(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
@@ -38,6 +38,12 @@ public class OreGenEnderOres implements IWorldGenerator {
 
     private void generateNether(World world, Random random, int x, int z) {
         // Nothing to generate in the nether
+    }
+
+    private void generateDefault(World world, Random random, int x, int z) {
+        if (ConfigHandler.generateEnderOre) {
+            addOreVein(ModBlocks.enderOre, world, random, x, z, 16, 16, ConfigHandler.maxVeinSizeEnderOre, ConfigHandler.chancesToSpawnEnderOre, 0, 256);
+        }
     }
 
     private void addOreVein(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY ){
