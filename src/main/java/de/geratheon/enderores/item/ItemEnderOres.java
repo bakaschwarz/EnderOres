@@ -3,15 +3,16 @@ package de.geratheon.enderores.item;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import de.geratheon.enderores.creativetab.CreativeTabEnderOres;
 import de.geratheon.enderores.reference.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-
 public class ItemEnderOres extends Item {
     public ItemEnderOres() {
         super();
+        this.setCreativeTab(CreativeTabEnderOres.ENDER_ORES_TAB);
     }
 
     @Override

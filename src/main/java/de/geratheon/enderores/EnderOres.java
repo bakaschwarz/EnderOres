@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import de.geratheon.enderores.handler.ConfigHandler;
 import de.geratheon.enderores.init.ModBlocks;
 import de.geratheon.enderores.init.ModItems;
+import de.geratheon.enderores.init.Recipes;
 import de.geratheon.enderores.reference.Reference;
 import de.geratheon.enderores.util.LogHelper;
 
@@ -32,6 +33,9 @@ public class EnderOres {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        // register recipes
+        Recipes.init();
+
         LogHelper.info("Initialization complete!");
     }
 
