@@ -1,0 +1,19 @@
+[
+{
+  "modid": "enderores",
+  "name": "EnderOres",
+  "description": "This is a wip mod. Sorry, there's no further information.",
+  "version": "0.1",
+  "mcversion": "1.7.10",
+  "url": "https://github.com/geratheon/EnderOres",
+  "updateUrl": "",
+  "authorList": [ "geratheon" ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
