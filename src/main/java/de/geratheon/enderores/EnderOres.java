@@ -5,12 +5,14 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import de.geratheon.enderores.handler.ConfigHandler;
 import de.geratheon.enderores.init.ModBlocks;
 import de.geratheon.enderores.init.ModItems;
 import de.geratheon.enderores.init.Recipes;
 import de.geratheon.enderores.reference.Reference;
 import de.geratheon.enderores.util.LogHelper;
+import de.geratheon.enderores.worldgen.OreGenEnderOres;
 
 @Mod(modid=Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.VERSION)
 public class EnderOres {
@@ -27,6 +29,10 @@ public class EnderOres {
         // register items, blocks and fluids
         ModItems.init();
         ModBlocks.init();
+
+        // ore gen
+        OreGenEnderOres oregen = new OreGenEnderOres();
+        GameRegistry.registerWorldGenerator(oregen, 0);
 
         LogHelper.info("Pre Initialization complete!");
     }
