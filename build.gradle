@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'forge'
 
 version = "1.7.10-0.1"
-group= "de.geratheon.sonicraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "Sonicraft"
+group= "de.geratheon.enderores" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "EnderOres"
 
 minecraft {
     version = "1.7.10-10.13.2.1291"
