@@ -14,7 +14,7 @@ import de.geratheon.enderores.reference.Reference;
 import de.geratheon.enderores.util.LogHelper;
 import de.geratheon.enderores.worldgen.OreGenEnderOres;
 
-@Mod(modid=Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.VERSION)
+@Mod(modid=Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class EnderOres {
 
     @Mod.Instance(Reference.MOD_ID)
