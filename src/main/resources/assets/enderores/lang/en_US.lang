@@ -1,5 +1,6 @@
 tile.enderores:enderOre.name=Ender Ore
 item.enderores:enderPearlNugget.name=Mini Ender Pearl
+item.enderores:enderPearlCompressed.name=Compressed Ender Pearl
 item.enderores:enderAthame.name=Ender Athame
 itemGroup.enderores=EnderOres
 achievement.enderores.miniEnderPearls=Mini Ender Pearls!
