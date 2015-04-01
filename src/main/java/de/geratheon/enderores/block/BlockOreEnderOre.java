@@ -3,12 +3,20 @@ package de.geratheon.enderores.block;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import de.geratheon.enderores.init.ModItems;
+import de.geratheon.enderores.reference.Reference;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
 public class BlockOreEnderOre extends BlockOreEnderOres {
+    public IIcon icon;
+    public IIcon iconEnd;
+    public IIcon iconNether;
+
     public BlockOreEnderOre() {
         super(Material.rock, ModItems.enderPearlNugget, 0, 3, 5);
         this.setBlockName("enderOre");
@@ -16,6 +24,34 @@ public class BlockOreEnderOre extends BlockOreEnderOres {
         this.setHarvestLevel("pickaxe", 2);
     }
 
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister iconRegister)
+    {
+        icon = iconRegister.registerIcon(Reference.RESOURCE_PREFIX + "enderOre");
+        iconEnd = iconRegister.registerIcon(Reference.RESOURCE_PREFIX + "enderOre_e");
+        iconNether = iconRegister.registerIcon(Reference.RESOURCE_PREFIX + "enderOre_n");
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int side, int meta)
+    {
+        switch (Minecraft.getMinecraft().theWorld.provider.dimensionId) {
+            case -1:
+                return iconNether;
+            case 0:
+                return icon;
+            case 1:
+                return iconEnd;
+            default:
+                return icon;
+        }
+    }
+
+    /*
+    *  Modified Redstone Ore Block Code
+    */
     @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World w, int x, int y, int z, Random rand) {
