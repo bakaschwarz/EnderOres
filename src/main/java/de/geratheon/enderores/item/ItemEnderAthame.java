@@ -6,8 +6,10 @@ import de.geratheon.enderores.init.ModItems;
 import de.geratheon.enderores.reference.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
@@ -18,7 +20,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ItemEnderAthame extends ItemEnderOres {
-    private static final int MAX_PEARLS = 10;
+    private static final int MAX_PEARLS = 100;
 
     private static IIcon iconEmpty;
     private static IIcon iconPartiallyFilled;
@@ -119,16 +121,25 @@ public class ItemEnderAthame extends ItemEnderOres {
         return itemStack;
     }
 
-    // consumes mini ender pearl in athame, kills an ender man
+    // consumes mini ender pearl in athame, kills an ender man, guarantees ender pearl
     @Override
     public boolean onLeftClickEntity(ItemStack itemStack, EntityPlayer player, Entity entity)
     {
+        entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 1);
+
         if (itemStack.stackTagCompound != null) {
             int pearls = itemStack.stackTagCompound.getInteger("pearls");
 
             if (pearls > 0) {
                 if (entity instanceof EntityEnderman) {
-                    entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 9001);
+                    entity.playSound("mob.endermen.death", 1F, 1F);
+                    if (!entity.worldObj.isRemote) {
+                        entity.worldObj.spawnEntityInWorld(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(Items.ender_pearl)));
+                    }
+                    entity.setDead();
+
+                    // todo: find a better way to guarantee an ender pearl drop
+                    //entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 9001);
 
                     itemStack.stackTagCompound.setInteger("pearls", pearls - 1);
                 }
