@@ -5,10 +5,8 @@ import de.geratheon.enderores.init.ModBlocks;
 import de.geratheon.enderores.init.ModItems;
 import de.geratheon.enderores.reference.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.stats.Achievement;
-import net.minecraft.stats.AchievementList;
 import net.minecraftforge.common.AchievementPage;
 
 import java.util.ArrayList;

@@ -4,7 +4,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import de.geratheon.enderores.init.ModItems;
-import net.minecraft.init.Items;
 
 public final class AchievementTriggerer {
     @SubscribeEvent

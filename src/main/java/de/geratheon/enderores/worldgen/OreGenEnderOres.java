@@ -3,7 +3,6 @@ package de.geratheon.enderores.worldgen;
 import cpw.mods.fml.common.IWorldGenerator;
 import de.geratheon.enderores.handler.ConfigHandler;
 import de.geratheon.enderores.init.ModBlocks;
-import de.geratheon.enderores.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
