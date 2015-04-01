@@ -5,8 +5,8 @@ import de.geratheon.enderores.init.ModBlocks;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 
-public class ModAchivements {
-    public static Achievement miniEnderPearls = new Achievement("achievement.enderores.miniEnderPearls", "enderores.miniEnderPearls", 0, 6, ModBlocks.enderOre, /*AchievementList.acquireIron*/ (Achievement) null);
+public class ModAchievements {
+    public static Achievement miniEnderPearls = new Achievement("achievement.enderores.miniEnderPearls", "enderores.miniEnderPearls", 0, 6, ModBlocks.enderOre, AchievementList.acquireIron);
 
     public static void init() {
         miniEnderPearls = miniEnderPearls.registerStat();

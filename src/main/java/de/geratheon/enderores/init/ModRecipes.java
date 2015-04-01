@@ -12,6 +12,13 @@ public class ModRecipes {
                 "ss",
                 's', new ItemStack(ModItems.enderPearlNugget));
 
+        GameRegistry.addRecipe(new ItemStack(ModItems.enderAthame),
+                "s",
+                "s",
+                "a",
+                's', new ItemStack(Items.ender_pearl),
+                'a', new ItemStack(Items.stick));
+
         // shapeless
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.enderPearlNugget, 4), new ItemStack(Items.ender_pearl));
     }

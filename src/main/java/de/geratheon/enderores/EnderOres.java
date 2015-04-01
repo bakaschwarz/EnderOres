@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.geratheon.enderores.handler.ConfigHandler;
-import de.geratheon.enderores.achievement.ModAchivements;
+import de.geratheon.enderores.achievement.ModAchievements;
 import de.geratheon.enderores.init.ModBlocks;
 import de.geratheon.enderores.init.ModItems;
 import de.geratheon.enderores.init.ModRecipes;
@@ -36,7 +36,7 @@ public class EnderOres {
         GameRegistry.registerWorldGenerator(oregen, 0);
 
         // register achievements
-        ModAchivements.init();
+        ModAchievements.init();
 
         LogHelper.info("Pre Initialization complete!");
     }
