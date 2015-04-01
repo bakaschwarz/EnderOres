@@ -10,7 +10,7 @@ import de.geratheon.enderores.handler.ConfigHandler;
 import de.geratheon.enderores.achievement.ModAchivements;
 import de.geratheon.enderores.init.ModBlocks;
 import de.geratheon.enderores.init.ModItems;
-import de.geratheon.enderores.init.Recipes;
+import de.geratheon.enderores.init.ModRecipes;
 import de.geratheon.enderores.reference.Reference;
 import de.geratheon.enderores.util.LogHelper;
 import de.geratheon.enderores.worldgen.OreGenEnderOres;
@@ -44,7 +44,7 @@ public class EnderOres {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         // register recipes
-        Recipes.init();
+        ModRecipes.init();
 
         LogHelper.info("Initialization complete!");
     }
