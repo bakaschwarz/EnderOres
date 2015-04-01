@@ -82,8 +82,8 @@ public class ItemEnderAthame extends ItemEnderOres {
 
     @Override
     public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean par4) {
-        list.add(EnumChatFormatting.GRAY + "Onehits Endermen by the cost of one mini ender pearl.");
-        list.add(EnumChatFormatting.GRAY + "Use to refill from inventory.");
+        list.add(EnumChatFormatting.GRAY + "Onehits Endermen for each mini pearl");
+        list.add(EnumChatFormatting.GRAY + "Use to refill from inventory");
 
         if (itemStack.stackTagCompound != null) {
 
