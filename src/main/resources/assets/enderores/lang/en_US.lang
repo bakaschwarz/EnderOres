@@ -1,3 +1,5 @@
 tile.enderores:enderOre.name=Ender Ore
 item.enderores:enderPearlNugget.name=Mini Ender Pearl
 itemGroup.enderores=EnderOres
+achievement.enderores.miniEnderPearls=Mini Ender Pearls!
+achievement.enderores.miniEnderPearls.desc=Mine some Mini Ender Pearls from Ender Ore
