@@ -28,6 +28,7 @@ public class ItemEnderAthame extends ItemEnderOres {
     private static IIcon iconFull;
 
     public ItemEnderAthame() {
+        super();
         this.setUnlocalizedName("enderAthame");
         this.setMaxStackSize(1);
     }
