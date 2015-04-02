@@ -20,6 +20,7 @@ public class ModAchievements {
     public static Achievement compressedEnderPearls = createAchievement("compressedEnderPearls", 1, 0, ModItems.enderPearlCompressed, (Achievement) null);
     public static Achievement enderAthame = createAchievement("enderAthame", 3, 0, ModItems.enderAthame, compressedEnderPearls);
     public static Achievement enderAthameKills = createAchievement("enderAthameKills", 3, 2, ModItems.enderAthame, enderAthame);
+    public static Achievement enderMirror = createAchievement("enderMirror", 1, -2, ModItems.enderMirror, compressedEnderPearls);
 
     public static void init() {
         miniEnderPearls = miniEnderPearls.registerStat();
@@ -34,6 +35,9 @@ public class ModAchievements {
         enderAthameKills = enderAthameKills.registerStat();
         enderAthameKills.setSpecial();
         achievements.add(enderAthameKills);
+
+        enderMirror = enderMirror.registerStat();
+        achievements.add(enderMirror);
 
         enderOresPage = new AchievementPage(Reference.MOD_NAME, achievements.toArray(new Achievement[achievements.size()]));
         AchievementPage.registerAchievementPage(enderOresPage);

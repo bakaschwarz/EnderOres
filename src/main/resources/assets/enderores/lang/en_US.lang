@@ -2,6 +2,8 @@ tile.enderores:enderOre.name=Ender Ore
 item.enderores:enderPearlNugget.name=Mini Ender Pearl
 item.enderores:enderPearlCompressed.name=Compressed Ender Pearl
 item.enderores:enderAthame.name=Ender Athame
+item.enderores:enderMirrorComponent.name=Mirror Component
+item.enderores:enderMirror.name=Ender Mirror
 itemGroup.enderores=EnderOres
 
 achievement.enderores.miniEnderPearls=Mini Ender Pearls!
@@ -11,4 +13,6 @@ achievement.enderores.compressedEnderPearls.desc=Craft an Compressed Ender Pearl
 achievement.enderores.enderAthame=Enderkiller!
 achievement.enderores.enderAthame.desc=Craft an Ender Athame out of Compressed Ender Pearls and a Stick
 achievement.enderores.enderAthameKills=Enderslaughter!
-achievement.enderores.enderAthameKills.desc=Kill a total of 1000 endermen with one single athame.
+achievement.enderores.enderAthameKills.desc=Kill a total of 1000 endermen with one single athame
+achievement.enderores.enderMirror=Portable Ender Storage
+achievement.enderores.enderMirror.desc=Craft an Ender Mirror to access your personal ender chest on the go!

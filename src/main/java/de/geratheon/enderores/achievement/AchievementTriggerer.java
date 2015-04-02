@@ -22,5 +22,9 @@ public final class AchievementTriggerer {
         if (event.crafting.getItem() == ModItems.enderAthame) {
             event.player.addStat(ModAchievements.enderAthame, 1);
         }
+
+        if (event.crafting.getItem() == ModItems.enderMirror) {
+            event.player.addStat(ModAchievements.enderMirror, 1);
+        }
     }
 }
