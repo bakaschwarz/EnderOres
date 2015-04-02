@@ -36,8 +36,10 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.enderMirror),
                 "s",
                 "a",
-                's', new ItemStack(ModItems.enderMirrorComponent),
-                'a', new ItemStack(ModItems.enderPearlNugget));
+                "d",
+                's', new ItemStack(Blocks.ender_chest),
+                'a', new ItemStack(ModItems.enderMirrorComponent),
+                'd', new ItemStack(ModItems.enderPearlNugget));
 
         // shapeless
         // GameRegistry.addShapelessRecipe(new ItemStack(ModItems.enderPearlNugget, 4), new ItemStack(Items.ender_pearl));
