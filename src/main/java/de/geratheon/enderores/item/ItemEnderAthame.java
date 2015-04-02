@@ -2,6 +2,7 @@ package de.geratheon.enderores.item;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import de.geratheon.enderores.achievement.ModAchievements;
 import de.geratheon.enderores.init.ModItems;
 import de.geratheon.enderores.reference.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -28,7 +29,7 @@ public class ItemEnderAthame extends ItemEnderOres {
 
     public ItemEnderAthame() {
         this.setUnlocalizedName("enderAthame");
-        this.setNoRepair();
+        this.setMaxStackSize(1);
     }
 
     @Override
@@ -77,6 +78,7 @@ public class ItemEnderAthame extends ItemEnderOres {
     private void initNBT(ItemStack itemStack) {
         itemStack.stackTagCompound = new NBTTagCompound();
         itemStack.stackTagCompound.setInteger("pearls", 0);
+        itemStack.stackTagCompound.setInteger("kills", 0);
     }
 
     @Override
@@ -85,9 +87,8 @@ public class ItemEnderAthame extends ItemEnderOres {
         list.add(EnumChatFormatting.GRAY + "Use to refill from inventory");
 
         if (itemStack.stackTagCompound != null) {
-
-
             int pearls = itemStack.stackTagCompound.getInteger("pearls");
+            int kills = itemStack.stackTagCompound.getInteger("kills");
 
             if (pearls == 0) {
                 list.add(EnumChatFormatting.RED + "Pearls: " + pearls);
@@ -96,8 +97,10 @@ public class ItemEnderAthame extends ItemEnderOres {
             } else {
                 list.add(EnumChatFormatting.GREEN + "Pearls: " + pearls);
             }
+
+            list.add(EnumChatFormatting.BLUE + "Endermen killed: " + kills);
         } else {
-            list.add(EnumChatFormatting.RED + "Creative spawned. Please use it to initialize it.");
+            list.add(EnumChatFormatting.RED + "Pearls: 0");
         }
     }
 
@@ -116,6 +119,7 @@ public class ItemEnderAthame extends ItemEnderOres {
             }
         } else {
             initNBT(itemStack);
+            onItemRightClick(itemStack, world, player);
         }
 
         return itemStack;
@@ -129,6 +133,7 @@ public class ItemEnderAthame extends ItemEnderOres {
 
         if (itemStack.stackTagCompound != null) {
             int pearls = itemStack.stackTagCompound.getInteger("pearls");
+            int kills = itemStack.stackTagCompound.getInteger("kills");
 
             if (pearls > 0) {
                 if (entity instanceof EntityEnderman) {
@@ -142,10 +147,15 @@ public class ItemEnderAthame extends ItemEnderOres {
                     //entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 9001);
 
                     itemStack.stackTagCompound.setInteger("pearls", pearls - 1);
+                    itemStack.stackTagCompound.setInteger("kills", kills + 1);
+                    if (kills + 1 >= 1000) {
+                        player.addStat(ModAchievements.enderAthameKills, 1);
+                    }
                 }
             }
         } else {
             initNBT(itemStack);
+            onLeftClickEntity(itemStack, player, entity);
         }
 
         return true;

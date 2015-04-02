@@ -10,3 +10,5 @@ achievement.enderores.compressedEnderPearls=Compressed Ender Pearls!
 achievement.enderores.compressedEnderPearls.desc=Craft an Compressed Ender Pearl out of four normal ones
 achievement.enderores.enderAthame=Enderkiller!
 achievement.enderores.enderAthame.desc=Craft an Ender Athame out of Compressed Ender Pearls and a Stick
+achievement.enderores.enderAthameKills=Enderslaughter!
+achievement.enderores.enderAthameKills.desc=Kill a total of 1000 endermen with one single athame.
